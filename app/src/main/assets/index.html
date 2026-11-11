@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>رحلة الأبطال في عالم الصلاة</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--g:#1f9d6b;--g2:#0f6b4a;--y:#ffc83d;--b:#2b7de9;--r:#e5534b;--bg:#e8f7ff;--ink:#17324d}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input{-webkit-user-select:text;user-select:text}
+body{margin:0;font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif;color:var(--ink);min-height:100vh;
+background:linear-gradient(#bfe8ff,#e9fbff 55%,#c9f2d9);overflow-x:hidden}
+body::before{content:"☪ ✦ ☪ ✦ ☪ ✦";position:fixed;top:8px;left:0;right:0;text-align:center;font-size:22px;color:#ffffff99;letter-spacing:18px;pointer-events:none}
+.wrap{max-width:760px;margin:0 auto;padding:14px 14px 40px;min-height:100vh;display:flex;flex-direction:column}
+.screen{display:none;animation:in .4s}.screen.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card{background:#fff;border-radius:26px;padding:22px;box-shadow:0 8px 0 #0002,0 14px 30px #0001;border:4px solid #fff}
+h1{font-size:clamp(28px,6vw,44px);margin:6px 0;color:var(--g2);line-height:1.3;text-align:center}
+.sub{text-align:center;font-size:18px;margin:4px 0 14px}
+.btn{font-family:inherit;font-size:clamp(18px,4vw,24px);font-weight:800;border:0;border-radius:20px;padding:14px 22px;cursor:pointer;
+background:var(--g);color:#fff;box-shadow:0 6px 0 var(--g2);transition:.1s;width:100%}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 var(--g2)}
+.btn.y{background:var(--y);color:#5a3b00;box-shadow:0 6px 0 #c9951a}
+.opt{display:block;margin:12px 0;background:#f4faff;color:var(--ink);box-shadow:0 5px 0 #b9d3ea;border:3px solid #cfe3f5;text-align:right;line-height:1.6}
+.opt:hover{background:#e3f2ff}
+.opt.bad{background:#ffe1de;border-color:var(--r);box-shadow:0 5px 0 #c9908b;animation:shake .4s;pointer-events:none}
+.opt.good{background:#d6f7e4;border-color:var(--g);box-shadow:0 5px 0 #7cc9a1;pointer-events:none}
+@keyframes shake{25%{transform:translateX(8px)}75%{transform:translateX(-8px)}}
+input{font-family:inherit;font-size:22px;padding:12px 16px;border-radius:16px;border:3px solid #b9d3ea;width:100%;text-align:center;margin:8px 0 14px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;font-weight:800;flex-wrap:wrap}
+.pill{background:#fff;border-radius:30px;padding:6px 14px;box-shadow:0 3px 0 #0002;font-size:17px}
+.bar{height:16px;background:#fff;border-radius:10px;overflow:hidden;margin-bottom:12px;box-shadow:inset 0 2px 4px #0002}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--y),var(--g));width:0;transition:.5s}
+.guide{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.guide svg{width:84px;flex:none;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.bubble{background:#fff8dc;border:3px solid var(--y);border-radius:20px;padding:10px 14px;font-weight:700;font-size:18px;line-height:1.6;flex:1}
+.q{font-size:clamp(20px,4.5vw,27px);font-weight:800;line-height:1.7;margin:6px 0 10px}
+.tag{display:inline-block;background:var(--b);color:#fff;border-radius:12px;padding:2px 12px;font-size:15px}
+.bins{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.bins .opt{text-align:center;margin:0;font-size:clamp(18px,4vw,24px)}
+.itemcard{background:linear-gradient(135deg,#fff3c4,#ffe08a);border-radius:22px;padding:22px;text-align:center;font-size:clamp(24px,6vw,34px);font-weight:800;margin:10px 0 16px;box-shadow:0 5px 0 #d9ae33}
+.stars{font-size:46px;text-align:center;letter-spacing:6px}
+.big{font-size:60px;text-align:center}
+.foot{margin-top:auto;padding-top:22px;text-align:center;font-weight:800;color:var(--g2);font-size:17px;line-height:1.6}
+.fx{position:fixed;top:-40px;font-size:28px;pointer-events:none;animation:fall 2.2s linear forwards;z-index:9}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.snd{background:#fff;border:0;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;box-shadow:0 3px 0 #0002}
+.hidden{display:none}
+.title{background:linear-gradient(135deg,var(--y),#ff9f43);border-radius:24px;padding:14px;text-align:center;font-size:clamp(24px,6vw,34px);font-weight:800;color:#5a2d00;margin:10px 0;animation:bob 1.6s infinite}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- START -->
+<section id="s-start" class="screen on"><div class="card">
+  <div id="g0" style="display:flex;justify-content:center"></div>
+  <h1>🕌 رحلة الأبطال في عالم الصلاة</h1>
+  <p class="sub">لعبة تعليمية في درس «منزلة الصلاة وفضلها»<br>الفقه – الصف الأول المتوسط</p>
+  <label style="font-weight:800;font-size:19px">✏️ اسم الطالب:</label>
+  <input id="name" placeholder="اكتب اسمك هنا" maxlength="30" autocomplete="off">
+  <button class="btn y" id="go">🚀 ابدأ المغامرة</button>
+</div></section>
+
+<!-- STAGE INTRO -->
+<section id="s-intro" class="screen"><div class="card">
+  <div id="g1" style="display:flex;justify-content:center"></div>
+  <div class="big" id="iNum"></div>
+  <h1 id="iTitle"></h1>
+  <p class="sub" id="iMsg"></p>
+  <button class="btn" id="iGo">هيا نبدأ ✨</button>
+</div></section>
+
+<!-- QUESTION -->
+<section id="s-q" class="screen">
+  <div class="top">
+    <span class="pill" id="hStage"></span>
+    <span class="pill">⭐ <b id="hPts">0</b></span>
+    <button class="snd" id="snd" title="الصوت">🔊</button>
+  </div>
+  <div class="bar"><i id="bar"></i></div>
+  <div class="card">
+    <div class="guide"><div id="g2"></div><div class="bubble" id="say"></div></div>
+    <span class="tag" id="qTag"></span>
+    <div class="q" id="qText"></div>
+    <div id="opts"></div>
+    <button class="btn y hidden" id="next">التالي ⬅️</button>
+  </div>
+</section>
+
+<!-- STAGE END -->
+<section id="s-end" class="screen"><div class="card">
+  <h1 id="eTitle"></h1>
+  <div class="stars" id="eStars"></div>
+  <p class="sub" id="eMsg"></p>
+  <button class="btn" id="eGo"></button>
+</div></section>
+
+<!-- FINAL -->
+<section id="s-final" class="screen"><div class="card">
+  <div class="big">🏆</div>
+  <h1>النتيجة النهائية</h1>
+  <p class="sub" style="font-size:22px;font-weight:800" id="fName"></p>
+  <div class="stars" id="fStars"></div>
+  <p class="sub" style="font-size:24px;font-weight:800">النقاط: <span id="fPts"></span> من <span id="fMax"></span></p>
+  <div class="title hidden" id="fTitle">🌟 بطل العبادة 🌟</div>
+  <p class="sub" id="fMsg"></p>
+  <button class="btn y" id="again">🔁 العب مرة أخرى</button>
+</div></section>
+
+<div class="foot">
+  تحت إشراف معلم المادة: إبراهيم إسماعيل<br>
+  <span style="color:var(--b);font-size:15px;">وليد الحسيان - صانع الصوت والمحول إلى تطبيق</span>
+</div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+
+// ===== Arabic voice engine =====
+let arVoice = null;
+const MALE_RE = /naayf|hamed|maged|majed|tarik|tareq|shakir|omar|laith|hamza|abdullah|fahad|salem|zayd|ismail|male|رجل/i;
+const FEMALE_RE = /hoda|zariyah|salma|laila|amira|fatima|female|مرأة|امرأة/i;
+function pickArabicVoice(){
+  if (!('speechSynthesis' in window)) return null;
+  const norm = v => (v.lang || '').toLowerCase().replace('_','-');
+  const vs = speechSynthesis.getVoices().filter(v => norm(v) === 'ar' || norm(v).startsWith('ar-'));
+  arVoice = vs.find(v => MALE_RE.test(v.name) && !FEMALE_RE.test(v.name) && norm(v) === 'ar-sa')
+         || vs.find(v => MALE_RE.test(v.name) && !FEMALE_RE.test(v.name))
+         || vs.find(v => !FEMALE_RE.test(v.name) && norm(v) === 'ar-sa')
+         || vs.find(v => !FEMALE_RE.test(v.name))
+         || vs[0] || null;
+  return arVoice;
+}
+if ('speechSynthesis' in window) {
+  pickArabicVoice();
+  speechSynthesis.onvoiceschanged = pickArabicVoice;
+}
+
+function cleanForSpeech(text){
+  return String(text)
+    .replace(/ﷺ/g, ' صلى الله عليه وسلم ')
+    .replace(/[﴿﴾«»"]/g, ' ')
+    .replace(/\.{2,}|…/g, ' ، ')
+    .replace(/[\u2011-\u26FF\u{1F000}-\u{1FFFF}\uFE0F\u200D]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+// ---- stop everything (system voice + online audio) ----
+let speakToken = 0, audioEl = null;
+const NA = (typeof window.AndroidTTS !== 'undefined') ? window.AndroidTTS : null;
+function stopAllSpeech(){
+  speakToken++;
+  try { if (NA) NA.stop(); } catch(e){}
+  try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch(e){}
+  if (audioEl) { try { audioEl.pause(); } catch(e){} audioEl = null; }
+}
+
+// ---- online Arabic voice (fallback when the device has NO Arabic voice) ----
+function chunkText(s, max = 170){
+  const out = []; let cur = '';
+  s.split(/(?<=[.!?؟،:؛])\s+/).forEach(p => {
+    if ((cur + ' ' + p).trim().length > max && cur) { out.push(cur.trim()); cur = p; }
+    else cur = (cur + ' ' + p).trim();
+  });
+  if (cur) out.push(cur.trim());
+  return out;
+}
+function playOnline(clean, token){
+  const parts = chunkText(clean); let i = 0;
+  const next = () => {
+    if (token !== speakToken || i >= parts.length) return;
+    const url = 'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ar&q=' + encodeURIComponent(parts[i++]);
+    const a = new Audio(url); audioEl = a; a.preservesPitch = true; a.playbackRate = 1.3;
+    a.onended = next;
+    a.onerror = () => console.log('Online Arabic voice failed (no internet?)');
+    a.play().catch(e => console.log('Audio blocked', e));
+  };
+  next();
+}
+
+function speakArabic(text) {
+  if (!sound) return;
+  const clean = cleanForSpeech(text);
+  if (!clean) return;
+  stopAllSpeech();
+  const token = speakToken;
+
+  // 0) Android app: use the phone's own Arabic text-to-speech (works offline)
+  try {
+    if (NA && NA.isReady()) {
+      setTimeout(() => { if (token === speakToken) { try { NA.speak(clean); } catch(e){} } }, 80);
+      return;
+    }
+  } catch(e){}
+
+  if (!arVoice) pickArabicVoice();
+
+  // 1) a real Arabic voice exists on this device -> use it
+  if (arVoice && 'speechSynthesis' in window) {
+    setTimeout(() => {
+      if (token !== speakToken) return;
+      try {
+        const u = new SpeechSynthesisUtterance(clean);
+        u.lang = arVoice.lang; u.voice = arVoice; u.rate = 1.2; u.pitch = 0.85;
+        u.onerror = e => { if (e.error !== 'canceled' && e.error !== 'interrupted') playOnline(clean, token); };
+        speechSynthesis.resume();
+        speechSynthesis.speak(u);
+      } catch(e) { playOnline(clean, token); }
+    }, 80);
+    return;
+  }
+  // 2) no Arabic voice but internet -> online Arabic audio
+  if (navigator.onLine) { playOnline(clean, token); return; }
+  // 3) offline and no voice listed -> let the OS (e.g. Android) try by language
+  if ('speechSynthesis' in window) {
+    setTimeout(() => {
+      if (token !== speakToken) return;
+      try { const u = new SpeechSynthesisUtterance(clean); u.lang = 'ar-SA'; u.rate = 1.2; u.pitch = 0.85; speechSynthesis.speak(u); } catch(e){}
+    }, 80);
+  }
+}
+
+// بيانات الأسئلة
+const T=["صح","خطأ"],K=["عبادة","ليست عبادة"];
+const S=[
+{n:"مفهوم العبادة",tag:"اختر الإجابة الصحيحة",msg:"اختر الإجابة الصحيحة عن مفهوم العبادة.",qs:[
+ ["العبادة هي:",["اسم جامع لكل ما يحبه الله ويرضاه من الأقوال والأعمال الظاهرة والباطنة","الصلاة فقط","الأعمال التي نفعلها للتسلية","الصيام فقط"],"العبادة تشمل الأقوال والأعمال الظاهرة والباطنة، وليست الصلاة وحدها."],
+ ["لماذا خلق الله الجن والإنس؟",["لعبادته وحده","للهو واللعب","لجمع المال","للتفاخر"],"قال تعالى: وما خلقت الجن والإنس إلا ليعبدون."],
+ ["الصلاة هي الركن ... من أركان الإسلام:",["الثاني","الأول","الثالث","الرابع"],"تأتي بعد الشهادتين مباشرةً."],
+ ["أي مما يلي من العبادات الباطنة (التي في القلب)؟",["محبة الله وخشيته","الصيام","الزكاة","الحج"],"العبادة الباطنة محلها القلب، كالمحبة والخوف والرجاء."]]},
+{n:"صنّف الأعمال",tag:"صنّف العمل",msg:"صنّف كل عمل: هل هو عبادة أم ليس عبادة؟",qs:[
+ ["الصلاة",K,"العبادة ما يحبه الله ويرضاه من الأقوال والأعمال.",0],
+ ["بر الوالدين",K,"الله يحب برّ الوالدين ويرضاه، فهو من العبادات.",0],
+ ["اللعب بالكرة للتسلية",K,"هذا عمل مباح، لكنه ليس عبادة بذاته.",1],
+ ["صيام شهر رمضان",K,"الصيام ركن من أركان الإسلام.",0],
+ ["مشاهدة الرسوم المتحركة",K,"هذا من أعمال التسلية وليس عبادة بذاته.",1],
+ ["قراءة القرآن الكريم",K,"القرآن كلام الله، وتلاوته مما يحبه الله ويرضاه.",0]]},
+{n:"صح أم خطأ",tag:"صح أم خطأ؟",msg:"اقرأ العبارة جيدًا ثم اختر: صح أم خطأ.",qs:[
+ ["الصلاة هي الركن الثاني من أركان الإسلام.",T,"الركن الأول هو الشهادتان، ثم الصلاة.",0],
+ ["العبادة تقتصر على الصلاة والصيام فقط.",T,"العبادة اسم جامع لكل ما يحبه الله ويرضاه.",1],
+ ["الصلاة تنهى عن الفحشاء والمنكر.",T,"قال تعالى: إن الصلاة تنهى عن الفحشاء والمنكر.",0],
+ ["يجوز صرف شيء من العبادة لغير الله.",T,"العبادة حق لله وحده لا شريك له.",1],
+ ["أول ما يحاسب عليه العبد يوم القيامة من عمله الصلاة.",T,"تذكّر الحديث الشريف عن أول ما يحاسب عليه العبد.",0]]},
+{n:"أكمل العبارة",tag:"أكمل العبارة",msg:"اختر الكلمة المناسبة لإكمال العبارة.",qs:[
+ ["قال تعالى: وما خلقت الجن والإنس إلا ...",["ليعبدون","ليلعبوا","ليتفاخروا","ليجمعوا"],"الآية تبين الحكمة من خلقنا."],
+ ["الصلاة ... الدين.",["عمود","سقف","باب","زينة"],"بها يقوم الدين كما يقوم البيت بعموده."],
+ ["فرض الله علينا خمس صلوات في ...",["اليوم والليلة","الأسبوع","الشهر","السنة"],"نصلي في كل يوم وليلة."],
+ ["الصلاة صلة بين العبد و...",["ربه","أصدقائه","معلمه","جيرانه"],"في الصلاة يناجي العبد ربه."]]},
+{n:"تحدي البطل",tag:"تحدي البطل",msg:"تحدٍّ أخير يجمع كل ما تعلمته. أنت قادر على الفوز!",qs:[
+ ["ما أول ما يحاسب عليه العبد يوم القيامة من عمله؟",["الصلاة","الصدقة","الصيام","الحج"],"إنه عمود الدين."],
+ ["قال النبي ﷺ: وجعلت قرة عيني في ...",["الصلاة","التجارة","السفر","الطعام"],"فيها راحته وسعادته عليه الصلاة والسلام."],
+ ["فُرضت الصلاة في ليلة:",["الإسراء والمعراج","القدر","النصف من شعبان","عاشوراء"],"رحلة النبي صلى الله عليه وسلم من مكة إلى بيت المقدس ثم إلى السماء."],
+ ["من فضائل الصلاة أن الله يمحو بها:",["الخطايا","الأموال","الأيام","الأعمار"],"مثلها النبي صلى الله عليه وسلم بالنهر الجاري."],
+ ["من آخر وصايا النبي ﷺ لأمته:",["الصلاة الصلاة","التجارة التجارة","السفر السفر","اللعب اللعب"],"وصية عظيمة تدل على مكانة الصلاة."]]}
+];
+const MAX=S.reduce((a,s)=>a+s.qs.length*10,0);
+const ok=["أحسنت يا بطل! 🌟","ممتاز! إجابة رائعة 👏","بارك الله فيك! 🎉","عمل رائع، واصل! 💪","ما شاء الله! أنت نجم ⭐"];
+let si,qi,tries,pts,stPts,chosen,sound=true,answered;
+
+// الشخصية المرشدة (طفل كرتوني بطاقية بيضاء)
+const guide=`<svg viewBox="0 0 120 130" xmlns="http://www.w3.org/2000/svg"><ellipse cx="60" cy="118" rx="38" ry="10" fill="#0002"/><path d="M22 120c0-26 16-36 38-36s38 10 38 36z" fill="#1f9d6b"/><circle cx="60" cy="56" r="34" fill="#ffd9a8" stroke="#e0a96d" stroke-width="3"/><path d="M28 46c2-24 20-30 32-30s30 6 32 30c-12-8-52-8-64 0z" fill="#fff" stroke="#cfd8dc" stroke-width="3"/><path d="M36 38h48M40 30h40" stroke="#1f9d6b" stroke-width="3" stroke-dasharray="4 4"/><circle cx="47" cy="60" r="5" fill="#17324d"/><circle cx="73" cy="60" r="5" fill="#17324d"/><circle cx="49" cy="58" r="1.8" fill="#fff"/><circle cx="75" cy="58" r="1.8" fill="#fff"/><circle cx="38" cy="72" r="6" fill="#ff9aa2" opacity=".7"/><circle cx="82" cy="72" r="6" fill="#ff9aa2" opacity=".7"/><path d="M48 74q12 12 24 0" fill="none" stroke="#17324d" stroke-width="3.5" stroke-linecap="round"/><path d="M44 96l16 12 16-12" fill="none" stroke="#fff" stroke-width="4"/></svg>`;
+["g0","g1","g2"].forEach(i=>$(i).innerHTML=guide);
+$("g0").firstChild.style.width="150px";$("g1").firstChild.style.width="110px";
+
+function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("on"));$(id).classList.add("on");scrollTo(0,0)}
+
+function say(t, extra){
+  $("say").textContent = t;
+  speakArabic(extra ? t + ". " + extra : t);
+}
+
+let ac;function tone(f,d=.15,t="sine",at=0){if(!sound)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+const o=ac.createOscillator(),g=ac.createGain();o.type=t;o.frequency.value=f;o.connect(g);g.connect(ac.destination);
+const s=ac.currentTime+at;g.gain.setValueAtTime(.18,s);g.gain.exponentialRampToValueAtTime(.001,s+d);o.start(s);o.stop(s+d)}catch(e){}}
+const sGood=()=>[523,659,784,1047].forEach((f,i)=>tone(f,.18,"triangle",i*.1));
+const sBad=()=>{tone(220,.25,"sawtooth");tone(165,.3,"sawtooth",.15)};
+$("snd").onclick=()=>{
+  sound=!sound;
+  $("snd").textContent=sound?"🔊":"🔇";
+  if(!sound) {
+    stopAllSpeech();
+  } else {
+    speakArabic($("say").textContent);
+  }
+};
+
+function confetti(n=36){const e=["⭐","🎉","✨","🌙","💛","🎊"];for(let i=0;i<n;i++){const d=document.createElement("div");d.className="fx";
+d.textContent=e[i%e.length];d.style.left=Math.random()*100+"vw";d.style.animationDelay=Math.random()*.6+"s";document.body.appendChild(d);setTimeout(()=>d.remove(),3200)}}
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a}
+
+// Bulletproof Click Handler for Start Button
+$("go").onclick = () => {
+  let n = $("name").value.trim();
+  if (!n) n = "بطل";
+  pts = 0;
+  stPts = [];
+  si = 0;
+  intro();
+};
+$("name").addEventListener("keydown", e => { if (e.key === "Enter") $("go").click() });
+
+function intro(){const s=S[si];$("iNum").textContent=["1️⃣","2️⃣","3️⃣","4️⃣","5️⃣"][si];$("iTitle").textContent="المرحلة "+["الأولى","الثانية","الثالثة","الرابعة","الخامسة"][si]+": "+s.n;
+$("iMsg").textContent=s.msg;show("s-intro");
+speakArabic(s.msg);
+$("iGo").onclick=()=>{qi=0;stPts[si]=0;ask()}}
+
+function ask(){const s=S[si],q=s.qs[qi];tries=0;answered=false;
+$("hStage").textContent="المرحلة "+(si+1)+" / 5 – السؤال "+(qi+1)+" / "+s.qs.length;$("hPts").textContent=pts;
+$("bar").style.width=(qi/s.qs.length*100)+"%";$("qTag").textContent=s.tag;$("next").classList.add("hidden");
+let studentName = $("name").value.trim() || "بطل";
+const sorting=si===1;
+say(qi?"ركّز يا "+studentName+"، أنت تقترب من النجاح!":"أهلًا يا "+studentName+"! أنا معك في هذه المرحلة 😊");$("qText").textContent=sorting?"":q[0];
+const box=$("opts");box.innerHTML="";
+let opts=q[1].map((t,i)=>({t,c:q[3]!==undefined?i===q[3]:i===0}));if(q[3]===undefined)opts=shuffle(opts);
+if(sorting){box.innerHTML='<div class="itemcard">'+q[0]+'</div><div class="bins"></div>'}
+const host=sorting?box.querySelector(".bins"):box;
+opts.forEach(o=>{const b=document.createElement("button");b.className="btn opt";b.textContent=(sorting?(o.t==="عبادة"?"🕌 ":"🎮 "):"")+o.t;b.onclick=()=>pick(b,o,opts,host,q);host.appendChild(b)});
+show("s-q")}
+
+function pick(b,o,opts,host,q){if(answered)return;tries++;
+if(o.c){answered=true;b.classList.add("good");const p=tries===1?10:5;pts+=p;stPts[si]+=p;$("hPts").textContent=pts;
+sGood();confetti(tries===1?36:16);say(ok[Math.random()*ok.length|0]+" (+"+p+" نقاط)");finish()}
+else{b.classList.add("bad");sBad();
+if(tries===1){say("💡 تلميح: "+q[2]+" حاول مرة أخرى!")}
+else{answered=true;say("لا بأس! الإجابة الصحيحة موضّحة باللون الأخضر. تعلّم منها وواصل 💪");
+[...host.children].forEach((x,i)=>{if(opts[i].c)x.classList.add("good")});finish()}}}
+
+function finish(){const last=qi===S[si].qs.length-1;$("next").textContent=last?"إنهاء المرحلة 🏁":"التالي ⬅️";$("next").classList.remove("hidden");
+$("next").onclick=()=>{if(last)stageEnd();else{qi++;ask()}}}
+
+function starsFor(p,m){const r=p/m;return r>=.99?3:r>=.6?2:r>0?1:0}
+function stageEnd(){const s=S[si],m=s.qs.length*10,st=starsFor(stPts[si],m);
+$("eTitle").textContent="أنهيت المرحلة "+(si+1)+"!";$("eStars").textContent="⭐".repeat(st)+"☆".repeat(3-st);
+const msgText = "حصلت على "+stPts[si]+" من "+m+" نقطة. "+(st===3?"مذهل! علامة كاملة 🎉":st===2?"أداء جميل جدًا 👏":"كل محاولة تقرّبك من البطولة 💪");
+$("eMsg").textContent = msgText;
+speakArabic(msgText);
+const lastStage=si===S.length-1;$("eGo").textContent=lastStage?"🏆 اعرض النتيجة النهائية":"المرحلة التالية ➡️";
+$("eGo").onclick=()=>{if(lastStage)final();else{si++;intro()}};
+confetti(st*10+6);show("s-end")}
+
+function final(){const t=S.reduce((a,s,i)=>a+starsFor(stPts[i],s.qs.length*10),0),perfect=pts===MAX;
+$("fName").textContent="الطالب: "+($("name").value.trim() || "بطل");$("fStars").textContent="⭐".repeat(t)+"☆".repeat(15-t);
+$("fPts").textContent=pts;$("fMax").textContent=MAX;$("fTitle").classList.toggle("hidden",!perfect);
+const fMsgText = perfect?"مبارك! حققت الدرجة الكاملة، فنلت لقب «بطل العبادة». نسأل الله أن يعينك على المحافظة على الصلاة."
+:pts>=MAX*.7?"أحسنت! أنت قريب جدًا من لقب بطل العبادة، أعد المحاولة لتحقق الدرجة الكاملة."
+:"بداية طيبة! راجع الدرس وأعد المحاولة، وستصبح بطلًا بإذن الله.";
+$("fMsg").textContent = fMsgText;
+speakArabic(fMsgText);
+if(perfect){sGood();confetti(90)}else confetti(30);show("s-final")}
+document.addEventListener("visibilitychange",()=>{if(document.hidden)stopAllSpeech()});
+$("again").onclick=()=>{pts=0;stPts=[];si=0;intro()};
+</script>
+</body>
+</html>
